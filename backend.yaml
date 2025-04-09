@@ -5,7 +5,7 @@
   - name: disable nodejs module
     ansible.builtin.command: dnf module disalbe nodejs -y
 
-  - nameL enalbe nodejs module
+  - name: enalbe nodejs module
     ansible.builtin.command: dnf module enalbe nodejs:20 -y
 
   
