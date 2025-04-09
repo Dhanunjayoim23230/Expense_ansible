@@ -7,8 +7,8 @@
       name: mysql-server
       state: installed  # state must be one of: absent, installed, latest, present, removed
 
-  # - name: start mysql service
-  #   ansible.builtin.service:
-  #   name: mysqld
-  #   state: started
-  #   enable: yes
+  - name: start mysql service
+    ansible.builtin.service:
+    name: mysqld
+    state: started
+    enable: yes
