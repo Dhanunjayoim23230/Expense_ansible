@@ -6,7 +6,7 @@
   tasks:
   - name: install python libraries
     ansible.builtin.package:
-      msg: "{{ item }}"
+      name: "{{ item }}"
       state: installed
     loop:
     - PyMySQL
