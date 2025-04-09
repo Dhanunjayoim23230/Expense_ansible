@@ -13,3 +13,18 @@
     ansible.builtin.package:
       name: nodejs
       state: installed
+
+  - name: add user expense
+    ansible.builtin.user:
+    name: expense
+  
+
+  - name: directory creation
+    ansible.builtin.file:
+    path: /app
+    
+  - name: download application code
+    ansible.builtin.get_url:
+    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+    dest: /tmp/backend.zip
+    mode: '0440'
