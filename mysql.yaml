@@ -8,7 +8,7 @@
       state: installed  # state must be one of: absent, installed, latest, present, removed
 
   - name: start mysql service
-    community.mysql.mysql_db:
+    ansible.builtin.service:
     name: mysql
-    state: present
+    state: started
     enable: yes
