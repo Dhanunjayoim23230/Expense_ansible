@@ -4,7 +4,7 @@
   tasks:
   - name: install mysql
     ansible.builtin.package:
-      name: mysql
+      name: mysql-server
       state: installed  # state must be one of: absent, installed, latest, present, removed
 
   - name: start mysql service
