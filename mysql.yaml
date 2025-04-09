@@ -27,3 +27,9 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{ mysql_password }}"
+      login_host: mysql.dawscloud.tech
+      register: mysql_info
+
+  - name: print mysql_info
+    ansible.builtin.debug:
+      msg: "{{ mysql_info }}"
