@@ -1,4 +1,4 @@
 - name: install mysql
-  ansible.builtin.packages:
+  ansible.builtin.package:
   name: mysql
   state: install
