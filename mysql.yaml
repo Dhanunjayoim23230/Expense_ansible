@@ -29,7 +29,7 @@
       login_password: "{{ mysql_password }}"
       login_host: "mysql.dawscloud.tech"
     register: mysql_info
-    #ignore_erros: true
+    ignore_errors: true
 
   - name: print mysql_info
     ansible.builtin.debug:
