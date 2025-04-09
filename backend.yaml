@@ -1,0 +1,16 @@
+- name: expense backend configuration
+  hosts: backend
+  become: yes
+  tasks:
+    - name: disable nodejs module
+      ansible.builtin.command: dnf module disalbe nodejs -y
+
+    - nameL enalbe nodejs module
+      ansible.builtin.command: dnf module enalbe nodejsL20 -y
+
+    
+    - name: install nodjs
+      ansible.builtin.package:
+        name: nodejs
+        state: installed
+        
