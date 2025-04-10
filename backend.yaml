@@ -37,6 +37,10 @@
       src: /tmp/backend.zip
       dest: /app
       remote_src: yes
+
+  - name: install dependencies
+    community.general.npm:
+      path: /app
   
 
   - name: Copy backend service 
@@ -44,12 +48,6 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
       
-
-  - name: backend daemon reload
-    ansible.builtin.systemd:
-      name: backend
-      state: reloaded
-      state: started
 
   - name: install python libraries
     ansible.builtin.pip:
