@@ -54,10 +54,11 @@
   - name: install mysql
     community.mysql.mysql_db:
       state: import
-      target: /app/schema/backend.sql
+      name: all
       login_user: root
-      login_password: ExpensApp@1
+      login_password: ExpenseApp@1
       login_host: mysql.dawscloud.tech
+      target: /app/schema/backend.sql
 
   - name: backend start the service
     ansible.builtin.systemd:
