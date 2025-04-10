@@ -54,7 +54,6 @@
   - name: install mysql
     community.mysql.mysql_db:
       state: import
-      name: all
       target: /app/schema/backend.sql
       login_user: root
       login_password: ExpensApp@1
