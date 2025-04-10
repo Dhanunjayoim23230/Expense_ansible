@@ -42,6 +42,13 @@
       state: reloaded
       state: started
 
+  - name: install python libraries
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      state: installed
+    loop:
+      - PyMySQL
+
   
 
   - name: install mysql
