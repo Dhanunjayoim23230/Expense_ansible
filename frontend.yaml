@@ -20,12 +20,12 @@
 
     - name: download front end content
       ansible.builtin.get_url:
-      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-      dest: /tmp/frontend.zip
+        url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+        dest: /tmp/frontend.zip
 
     - name: unzip front end content
       ansible.builtin.archive:
-      src: /tmp/frontend.zip
-      dest: /usr/share/nginx/html
+        src: /tmp/frontend.zip
+        dest: /usr/share/nginx/html
 
     
