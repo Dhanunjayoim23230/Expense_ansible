@@ -32,6 +32,28 @@
 
   - name: Copy backend service 
     ansible.builtin.copy:
-      src: /backend.service
+      src: backend.service
       dest: /etc/systemd/system/backend.service
       remote_src: true
+
+  - name: backend daemon reload
+    ansible.builtin.systemd:
+      name: backend
+      state: reloaded
+      state: started
+
+  - name: backend start the service
+    ansible.builtin.systemd:
+      name: backend
+      state: restarted
+      daemon_reload: true
+      enalbed: true
+
+  - name: install mysql
+    community.mysql.mysql_db:
+      state: import
+      name: all
+      target: /app/schema/backend.sql
+      login_user: root
+      login_password: ExpensApp@1
+      login_host: mysql.dawscloud.tech
