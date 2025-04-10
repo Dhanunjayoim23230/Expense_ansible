@@ -6,8 +6,10 @@
       ansible.builtin.package:
         name: nginx
         state: installed
+        
+
     - name: enable nginx server
-      ansible.builtin.debug:
+      ansible.builtin.service:
         name: nginx
         state: restarted
         enabled: true
