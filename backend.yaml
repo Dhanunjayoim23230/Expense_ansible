@@ -30,5 +30,8 @@
       dest: /tmp/backend.zip
   
 
-
+  - name: Copy backend service 
+    ansible.builtin.copy:
+      src: /backend.service
+      dest: /etc/systemd/system/backend.service
 
