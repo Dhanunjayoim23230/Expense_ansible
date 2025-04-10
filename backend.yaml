@@ -42,12 +42,7 @@
       state: reloaded
       state: started
 
-  - name: backend start the service
-    ansible.builtin.systemd:
-      name: backend
-      state: restarted
-      daemon_reload: true
-      enalbed: true
+  
 
   - name: install mysql
     community.mysql.mysql_db:
@@ -57,3 +52,10 @@
       login_user: root
       login_password: ExpensApp@1
       login_host: mysql.dawscloud.tech
+
+  - name: backend start the service
+    ansible.builtin.systemd:
+      name: backend
+      state: restarted
+      daemon_reload: true
+      enalbed: true
