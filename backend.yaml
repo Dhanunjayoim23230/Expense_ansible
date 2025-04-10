@@ -48,7 +48,7 @@
       state: present
     loop:
       - PyMySQL
-
+      - cryptography
   
 
   - name: install mysql
